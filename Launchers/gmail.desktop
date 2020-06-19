@@ -1,0 +1,38 @@
+[Desktop Entry]
+Name=Gmail
+Categories=Office;
+Exec=~/.webapps/gmail/gmail
+Icon=gmail
+Path=
+StartupNotify=true
+Terminal=false
+Type=Application
+Version=1.0
+
+Actions=in-browser;reinstall;uninstall;
+[Desktop Action reinstall]
+
+Name=Reinstall
+Exec=kdialog --title Reinstall --warningyesno 'Are you sure?' && nativefier-freedesktop ~/.webapps/installers/gmail.webapp
+Icon=view-refresh
+
+Name[it]=Reinstalla
+Exec[it]=kdialog --title Reinstalla --warningyesno 'Sei sicuro?' && nativefier-freedesktop ~/.webapps/installers/gmail.webapp
+
+
+[Desktop Action uninstall]
+
+Name=Uninstall
+Exec=kdialog --title Uninstall --warningyesno 'Are you sure?' && rm -rf ~/.webapps/gmail/ && rm -rf ~/.local/share/applications/gmail.desktop
+Icon=edit-delete
+
+Name[it]=Disinstalla
+Exec[it]=kdialog --title Disinstalla --warningyesno 'Sei sicuro?' && rm -rf ~/.webapps/gmail/ && rm -rf ~/.local/share/applications/gmail.desktop
+
+[Desktop Action in-browser]
+
+Name=Open in the browser
+Exec=xdg-open mail.google.com
+Icon=internet-web-browser
+Name[it]=Apri nel browser
+
